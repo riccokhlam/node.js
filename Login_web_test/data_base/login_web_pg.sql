@@ -1,0 +1,23 @@
+CREATE USER Web_testAdmin WITH PASSWORD "Ricco31121994";
+CREATE DATABASE Web_login WITH OWNER=Web_testAdmin;
+\c web_login
+SET ROLE web_testadmin;
+
+DROP TABLE IF EXISTS information;
+DROP TABLE IF EXISTS login;
+
+CREATE TABLE information(
+	ID SERIAL PRIMARY KEY NOT NULL,
+	First_Name TEXT DEFAULT NULL,
+	Last_Name TEXT DEFAULT NULL,
+	Age TEXT DEFAULT '0',
+	Sex TEXT DEFAULT " ",
+	User TEXT DEFAULT NULL,
+	Password TEXT DEFAULT NULL
+);
+
+CREATE TABLE login(
+	VIP TEXT DEFAULT NULL,
+	User TEXT NOT NULL,
+	Password int NOT NULL
+)
